@@ -1,0 +1,85 @@
+@use "templates";
+@use "variables";
+
+body {
+    width: 100vw;
+    height: 100vh;
+    @include templates.flex-setting(column, wrap);
+    justify-content: space-between;
+    background-color: burlywood;
+}
+
+header, footer {
+    ul {
+        @include templates.flex-setting();
+
+        li {
+            margin: 1rem;
+        }
+    }
+}
+
+header {
+
+    ul {
+        a {
+            margin: 1rem auto 1rem 1rem;
+        }
+
+        a img {
+            width: 80px;
+        }
+    }
+}
+
+body main form {
+    width: 90vw;
+    @include templates.grid-setting($col: 1fr 3fr 1.5fr, $row: repeat(6, 1fr));
+    gap: 0.5rem;
+
+    span {
+        align-self: center;
+    }
+
+    .description {
+        margin-left: 2rem;
+    }
+
+    .function {
+        font: map-get($map: variables.$font-sizes, $key: "extra-small") variables.$font-stack;
+    }
+
+    input {
+        height: 30px;
+        
+        &:focus{
+            outline: map-get($map: variables.$theme-colors, $key: "blue") solid 1px;
+        }
+    }
+
+    .advanced-search-button {
+        justify-self: end;
+        width: fit-content;
+        padding: 0 .5rem;
+        background-color: map-get($map: variables.$theme-colors, $key: "blue");
+        @include templates.std-border(0);
+        border-radius: 2px;
+        font: bold map-get($map: variables.$font-sizes, $key: "extra-small") variables.$font-stack;
+
+        &:hover {
+            background-color: lighten($color: #4285f4, $amount: 7);
+        }
+    }
+}
+
+footer {
+    .country {
+        margin: 1rem;
+    }
+
+    ul {
+        .break-bar {
+            margin-left: auto;
+        }
+    }
+}

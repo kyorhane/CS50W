@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+a:active, a:visited {
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: cadetblue;
+}
+
+header ul, footer ul {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+}
+header ul li, footer ul li {
+  margin: 1rem;
+}
+header .country, footer .country {
+  margin: 1rem;
+}
+header .break-bar, footer .break-bar {
+  margin-left: auto;
+}
+
+header {
+  align-self: flex-end;
+}
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: flex-start;
+}
+main img {
+  width: clamp(300px, 30vw, 500px);
+}
+main form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+main form .text-box {
+  width: clamp(500px, 40vw, 800px);
+  height: 3rem;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  border-radius: 1.5rem;
+}
+main form .text-box input {
+  background-color: transparent;
+  border: none;
+  align-self: stretch;
+  flex: 1 0 auto;
+  outline: none;
+  font: 24px helvetica, arial, "courier new", system-ui;
+}
+main form .text-box input:-webkit-autofill::first-line {
+  background-color: red;
+}
+main form .text-box label {
+  height: 24px;
+}
+main form .text-box span {
+  padding: 0 1rem;
+}
+main form .button {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 1rem 0;
+}
+main form .button input {
+  padding: 0.5rem 1rem;
+  border: 0 solid black;
+  border-radius: 0.25rem;
+}
+main form .button input:hover {
+  outline: 1px solid black;
+}
+main form .button .google-search {
+  margin-right: 0.25rem;
+}
+main form .button .feeling-lucky {
+  margin-left: 0.25rem;
+}
+
+footer {
+  background-color: lightcoral;
+}

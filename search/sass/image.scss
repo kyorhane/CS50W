@@ -1,0 +1,95 @@
+@use "templates";
+@use "variables";
+
+body {
+    width: 100vw;
+    height: 100vh;
+    @include templates.flex-setting(column, wrap);
+    background-color: cadetblue;
+}
+
+header, footer {
+
+    ul {
+        @include templates.flex-setting;
+
+        li {
+            margin: 1rem;
+        }
+    }
+
+    .country {
+        margin: 1rem;
+    }
+
+    .break-bar {
+        margin-left: auto;
+    }
+}
+
+header {
+    align-self: flex-end;
+    // background-color: khaki;
+}
+
+main {
+    // background-color: lightblue;
+    @include templates.flex-setting(column, wrap);
+    flex: 1 0 auto;
+    align-items: center;
+    justify-content: flex-start;
+
+    img {
+        width: clamp(300px, 30vw, 500px);
+    }
+
+    form {
+        @include templates.flex-setting(column, nowrap);
+        align-items: center;
+
+        .text-box {
+            width: clamp(500px, 40vw, 800px);
+            height: 3rem;
+            border: 1px solid black;
+            @include templates.flex-setting;
+            align-items: center;
+            border-radius: 1.5rem;
+
+            input {
+                background-color: transparent;
+                border: none;
+                align-self: stretch;
+                flex: 1 0 auto;
+                outline: none;
+                font: map-get($map: variables.$font-sizes, $key: "medium") variables.$font-stack;
+
+                &:-webkit-autofill::first-line {
+                    background-color: red;
+                }
+            }
+
+            label {
+                // force label to be 24px so the lens icon can properly align 
+                height: 24px;
+            }
+            
+            span {
+                padding: 0 .5rem;
+            }
+
+            button {
+                background: none;
+                height: 24px;
+                @include templates.std-border(0);
+                
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: lightcoral;
+}

@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+a:active, a:visited {
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  background-color: burlywood;
+}
+
+header ul, footer ul {
+  display: flex;
+  flex-flow: row nowrap;
+}
+header ul li, footer ul li {
+  margin: 1rem;
+}
+
+header ul a {
+  margin: 1rem auto 1rem 1rem;
+}
+header ul a img {
+  width: 80px;
+}
+
+body main form {
+  width: 90vw;
+  display: grid;
+  grid-template: repeat(6, 1fr)/1fr 3fr 1.5fr;
+  gap: 0.5rem;
+}
+body main form span {
+  align-self: center;
+}
+body main form .description {
+  margin-left: 2rem;
+}
+body main form .function {
+  font: 11px helvetica, arial, "courier new", system-ui;
+}
+body main form input {
+  height: 30px;
+}
+body main form input:focus {
+  outline: #4285f4 solid 1px;
+}
+body main form .advanced-search-button {
+  justify-self: end;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 0.5rem;
+  background-color: #4285f4;
+  border: 0 solid black;
+  border-radius: 2px;
+  font: bold 11px helvetica, arial, "courier new", system-ui;
+}
+body main form .advanced-search-button:hover {
+  background-color: #649bf6;
+}
+
+footer .country {
+  margin: 1rem;
+}
+footer ul .break-bar {
+  margin-left: auto;
+}

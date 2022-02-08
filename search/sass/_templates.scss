@@ -1,0 +1,39 @@
+@use "variables";
+@use "sass:map";
+
+// layout setting
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    // refer https://stackoverflow.com/a/9547315 for more details
+}
+
+// layout styling
+@mixin flex-setting($direction: row, $wrap: nowrap) {
+    display: flex;
+    flex-flow: $direction $wrap;
+}
+
+@mixin grid-setting($col: repeat(3, 1fr), $row: repeat(3, 1fr)) {
+    display: grid;
+    grid-template: $row / $col;
+}
+
+//element styling
+@mixin std-border($size: 1px, $style: solid, $color: black) {
+    border: $size $style $color;
+}
+
+// text styling
+a {
+    text-decoration: none;
+
+    &:active, &:visited {
+        color: inherit;
+    }
+}
+
+li {
+    list-style: none;
+}
