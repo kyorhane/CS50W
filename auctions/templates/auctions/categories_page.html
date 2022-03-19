@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+    {{ CategoryName }}
+{% endblock %}
+
+{% block body %}
+    <h1>Auctions related to {{ CategoryName }}</h1>
+    <ul>
+        {% for items in ListingItems %}
+            {% include "auctions/listing_items_list_view.html" %}
+        {% endfor %}
+    </ul>
+{% endblock %}

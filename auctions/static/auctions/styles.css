@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100vw;
+    height: 100vh;
+    place-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active, a::after {
+    color: inherit;
+}
+
+li {
+    list-style: none;
+    margin: .15rem 0;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    object-position: center;
+    object-fit: cover;
+    margin: 1rem;
+}
+
+button {
+    width: 175px;
+    border-radius: 1rem;
+    padding: 0.15rem;
+    margin: 0.15rem 0;
+}
+
+button:hover {
+    background-color: rgb(179, 209, 255);
+}
+
+form {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+form input[type="submit"] {
+    width: 100px;
+    height: min-content;
+    margin: 0 1rem;
+}
+
+.nav {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.nav .nav-item .nav-link {
+    margin: 0 .15rem;
+}
+
+.container {
+    width: 100vw;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.listing {
+    display: flex;
+    margin: 0 0 1rem 0;
+    flex-flow: column nowrap;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+}
+
+.description {
+    margin: 0 1rem;
+}
+
+.errorlist {
+    font-size: 18px;
+    color: red;
+}

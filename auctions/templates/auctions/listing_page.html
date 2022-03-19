@@ -1,0 +1,48 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+    {{ items.title }}
+{% endblock %}
+
+{% block body %}
+    {% if permission %}
+        {% if permission == True %}
+            <form action="{% url 'auctions:listing' items.id %}" method="post">
+                {% csrf_token %}
+                {{ status_form.as_p }}
+                <h5>Close the auction?</h5>
+                <input type="submit" value="Yes" name="permission">
+            </form>
+        {% endif %}
+    {% endif %}
+
+    {% if status == False %}
+        {% if winner %}
+            <h1>This auction has been closed and {{ winner.user }} has won with ${{ items.final_price }}.</h1>
+        {% else %}
+            <h1>This auction has been closed without a winner.</h1>
+        {% endif %}
+        {% include "auctions/listing_items_list_view.html" %}
+        {% include "auctions/comments.html" %}
+    {% else %}
+        {% include "auctions/listing_items_list_view.html" %}
+        {% if user.is_authenticated and user.id != items.user.id %}
+            <form action="{% url 'auctions:listing' items.id %}" method="post">
+                {% csrf_token %}
+                {% if message %}
+                    <h5>{{ message }}</h5>
+                {% endif %}
+                {{ bid_form.as_p }}
+                <input type="submit" value="Place Bid" name="bid">
+            </form>
+
+            <form action="{% url 'auctions:listing' items.id %}" method="post">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <input type="submit" value="Comment" name="comment">
+            </form>
+        {% endif %}
+        {% include "auctions/comments.html" %}
+    {% endif %}
+
+{% endblock %}
