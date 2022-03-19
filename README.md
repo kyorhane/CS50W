@@ -6,3 +6,4 @@
 - unintuitive objects (queryset),
 - forms and server-side validation (clean),
 - bad urlconf leading to spaghetti codes, error-prone index accessing (redirect, reverse, re.path),
+- horrible naming skill (CamelCase 🐫, snake_case 🐍, explicity, simplicity, consistency)
