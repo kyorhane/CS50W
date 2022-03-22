@@ -1,5 +1,5 @@
 # Tracking my progress with CS50's Web Track
-## Project 2: Commerce
+## [Project 2: Commerce](https://cs50.harvard.edu/web/2020/projects/2/commerce/)
 
 - Repeating duplicate codes all over the place (templates, views),
 - poorly-designed relational databases (models),
